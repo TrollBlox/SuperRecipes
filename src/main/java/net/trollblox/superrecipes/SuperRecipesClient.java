@@ -1,4 +1,10 @@
 package net.trollblox.superrecipes;
 
-public class SuperRecipesClient {
+import net.fabricmc.api.ClientModInitializer;
+
+public class SuperRecipesClient implements ClientModInitializer {
+    @Override
+    public void onInitializeClient() {
+
+    }
 }
