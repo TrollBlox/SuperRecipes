@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "superrecipes",
+	"version": "${version}",
+	"name": "Super Recipes",
+	"description": "Custom Recipes for Super One Server",
+	"authors": [
+		"TrollBlox"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/superrecipes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.trollblox.superrecipes.SuperRecipes"
+		],
+		"client": [
+			"net.trollblox.superrecipes.SuperRecipesClient"
+		],
+		"fabric-datagen": [
+			"net.trollblox.superrecipes.SuperRecipesDataGenerator"
+		]
+	},
+	"mixins": [
+		"superrecipes.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
