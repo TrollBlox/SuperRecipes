@@ -3,7 +3,7 @@
 	"package": "net.trollblox.superrecipes.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"MusicDiscRemainderMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
