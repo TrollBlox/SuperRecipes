@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class SuperRecipes implements ModInitializer {
-	public static final String MOD_ID = "superrecipes";
+	public static final String MOD_ID = "super-recipes";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
