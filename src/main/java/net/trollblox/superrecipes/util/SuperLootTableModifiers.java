@@ -9,6 +9,7 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
+import net.trollblox.superrecipes.config.SuperConfigs;
 
 public class SuperLootTableModifiers {
     public static final Identifier ZOMBIFIED_PIGLIN_ID = new Identifier("minecraft", "entities/zombified_piglin");
@@ -18,7 +19,7 @@ public class SuperLootTableModifiers {
             if (source.isBuiltin() && key.getValue().equals(ZOMBIFIED_PIGLIN_ID)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1.0f))
-                        .conditionally(RandomChanceLootCondition.builder(0.005f))
+                        .conditionally(RandomChanceLootCondition.builder(SuperConfigs.ANCIENT_DEBRIS_DROP_RATE))
                         .with(ItemEntry.builder(Items.ANCIENT_DEBRIS))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
 
