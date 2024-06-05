@@ -19,6 +19,5 @@ public class HopperSpeedMixin {
     private void overrideNeedsCooldown(int transferCooldown, CallbackInfo info) {
         int cooldown = transferCooldown - (8 - SuperConfigs.HOPPER_TICK_DELAY);
         this.transferCooldown = cooldown;
-        SuperRecipes.LOGGER.info("Set hopper cooldown to " + cooldown + " ticks");
     }
 }
