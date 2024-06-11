@@ -3,6 +3,7 @@
   "package": "net.trollblox.superrecipes.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BeaconEffectsMixin",
     "HopperSpeedMixin",
     "HopperSpeedToggleMixin",
     "MusicDiscRemainderMixin"
