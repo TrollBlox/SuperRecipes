@@ -27,7 +27,7 @@ public class BeaconEffectsMixin {
 
     @Inject(at = @At("TAIL"), method = "<init>")
     private void overrideBeaconEffects(CallbackInfo info) {
-        EFFECTS_BY_LEVEL = List.of(List.of(StatusEffects.SPEED, StatusEffects.NIGHT_VISION), List.of(StatusEffects.HASTE, StatusEffects.JUMP_BOOST), List.of(StatusEffects.STRENGTH, StatusEffects.RESISTANCE), List.of(StatusEffects.REGENERATION, StatusEffects.SATURATION, StatusEffects.HEALTH_BOOST));
+        EFFECTS_BY_LEVEL = List.of(List.of(StatusEffects.SPEED, StatusEffects.HASTE), List.of(StatusEffects.RESISTANCE, StatusEffects.JUMP_BOOST), List.of(StatusEffects.STRENGTH, StatusEffects.HEALTH_BOOST), List.of(StatusEffects.REGENERATION, StatusEffects.NIGHT_VISION, StatusEffects.SATURATION));
         EFFECTS = EFFECTS_BY_LEVEL.stream().flatMap(Collection::stream).collect(Collectors.toSet());
     }
 
