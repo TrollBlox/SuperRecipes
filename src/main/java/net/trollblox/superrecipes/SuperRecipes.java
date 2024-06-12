@@ -1,9 +1,6 @@
 package net.trollblox.superrecipes;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.text.Text;
 import net.trollblox.superrecipes.config.SuperConfigs;
 import net.trollblox.superrecipes.util.SuperLootTableModifiers;
 import org.slf4j.Logger;

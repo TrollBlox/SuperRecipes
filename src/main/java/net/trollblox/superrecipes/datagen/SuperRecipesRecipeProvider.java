@@ -2,12 +2,17 @@ package net.trollblox.superrecipes.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.PistonBlock;
+import net.minecraft.block.entity.PistonBlockEntity;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.TagEntry;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
@@ -28,6 +33,16 @@ public class SuperRecipesRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.DISPENSER)));
         generateMusicDiscRecipes(exporter);
+
+        // Deepslate Dropper
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, Items.DROPPER, 1)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("#R#")
+                .input('#', Blocks.COBBLED_DEEPSLATE).input('R', Items.REDSTONE)
+                .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
+                .offerTo(exporter, new Identifier(getRecipeName(Items.DROPPER)));
+
     }
 
     private static void generateMusicDiscRecipes(RecipeExporter exporter) {

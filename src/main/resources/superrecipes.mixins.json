@@ -6,7 +6,8 @@
     "BeaconEffectsMixin",
     "HopperSpeedMixin",
     "HopperSpeedToggleMixin",
-    "MusicDiscRemainderMixin"
+    "MusicDiscRemainderMixin",
+    "SaturationStatusEffectMixin"
   ],
   "injectors": {
     "defaultRequire": 1
