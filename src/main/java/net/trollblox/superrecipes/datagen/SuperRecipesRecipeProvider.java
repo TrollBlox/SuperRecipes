@@ -5,11 +5,14 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.PistonBlock;
 import net.minecraft.block.entity.PistonBlockEntity;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagEntry;
 import net.minecraft.registry.tag.TagKey;
@@ -46,22 +49,11 @@ public class SuperRecipesRecipeProvider extends FabricRecipeProvider {
     }
 
     private static void generateMusicDiscRecipes(RecipeExporter exporter) {
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_5);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_11);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_13);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_CAT);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_CHIRP);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_BLOCKS);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_FAR);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_MALL);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_MELLOHI);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_OTHERSIDE);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_PIGSTEP);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_RELIC);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_STAL);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_STRAD);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_WAIT);
-        offerMusicDiscDuplicationRecipe(exporter, Items.MUSIC_DISC_WARD);
+        for (Item item : Registries.ITEM.stream().toList()) {
+            if (item.getComponents().contains(DataComponentTypes.JUKEBOX_PLAYABLE)) {
+                offerMusicDiscDuplicationRecipe(exporter, item);
+            }
+        }
     }
 
     public static void offerMusicDiscDuplicationRecipe(RecipeExporter exporter, ItemConvertible item) {

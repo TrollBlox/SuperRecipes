@@ -1,18 +1,22 @@
-// 1.21	2024-07-09T20:50:44.7848312	Super Recipes/Recipes
+// 1.21	2024-07-10T16:39:36.7974642	Super Recipes/Recipes
 52b8ba995b89906c310bbb4add204196c1707527 data\super-recipes\advancement\recipes\redstone\dispenser.json
 cce31ebb8bfe491bac4d680a0d6100d3d5ff66df data\super-recipes\advancement\recipes\misc\music_disc_cat.json
 1df71e1efde0f8fcdd6e726ef6ba593ad21e977a data\super-recipes\recipe\music_disc_far.json
+7d1a54cd5f6d96f0bad703d1a3c798c4423b7144 data\super-recipes\recipe\music_disc_creator_music_box.json
+0a176ae17e0b8e5da99f63ecd51acc835104e7d1 data\super-recipes\advancement\recipes\misc\music_disc_creator.json
 d5a01c5ff82b67c966acd339340cef2d0e4fec1b data\super-recipes\recipe\music_disc_strad.json
+0e62cf771a428f754b1039d1810706315fbbe427 data\super-recipes\advancement\recipes\misc\music_disc_creator_music_box.json
 7aceaa3e5ccd592ad32a1439b455468f119a3add data\super-recipes\advancement\recipes\misc\music_disc_mall.json
 d6eae85c464f529de7843aeff6237f367845522b data\super-recipes\recipe\music_disc_stal.json
 3be2a5a0f4692de465e8a8c62860169c854cd6a5 data\super-recipes\recipe\music_disc_13.json
 ea26e866d810406d7395718de332239b75330a09 data\super-recipes\recipe\music_disc_relic.json
 c2480b2a167d9a7808f5c5d6f024a031420cead8 data\super-recipes\advancement\recipes\misc\music_disc_mellohi.json
-a6fc37e1c9639d1367db4928b6bf3ce8c166d92d data\super-recipes\advancement\recipes\misc\music_disc_otherside.json
 dcdab0514e703997b1c29c1e43e9387db283c16a data\super-recipes\recipe\music_disc_wait.json
+a6fc37e1c9639d1367db4928b6bf3ce8c166d92d data\super-recipes\advancement\recipes\misc\music_disc_otherside.json
 1749e42e08e22f72fc93f6f942944a9912053f7d data\super-recipes\advancement\recipes\misc\music_disc_pigstep.json
 7f618069b0b1609d00aa70f92e8c608b062da003 data\super-recipes\recipe\music_disc_5.json
 2b40085258b2e6ff8bf170830f7d367dc368f178 data\super-recipes\recipe\music_disc_blocks.json
+35d72b8941ee0d550169eb2093a6a18fd40cf73e data\super-recipes\recipe\music_disc_precipice.json
 348f3990e78513da225ac512f5a63dd01c7933c0 data\super-recipes\advancement\recipes\misc\music_disc_11.json
 5d8ebf58f80d5712aaea3e5f1dc43da57c924b25 data\super-recipes\advancement\recipes\misc\music_disc_relic.json
 8d8ad3d4adb21fa53fd44e3ec6c302c1dd7ad117 data\super-recipes\advancement\recipes\redstone\dropper.json
@@ -27,7 +31,9 @@ ab0f68da51cb29e2beba6dce52e8439b17a8f412 data\super-recipes\advancement\recipes\
 cfec98359e3926978666d05d5d176e9b7281d0e8 data\super-recipes\recipe\music_disc_otherside.json
 1e7391a4cb7b64fcdbdabdd19b686d0695c2ff59 data\super-recipes\advancement\recipes\misc\music_disc_13.json
 db119e352df9386859c71afccba96fd600a7a4fd data\super-recipes\recipe\music_disc_mellohi.json
+6ee9d9a1fa8358bb62764af50b5e8ffb66cc3078 data\super-recipes\advancement\recipes\misc\music_disc_precipice.json
 38eae403b47510c5c4696f773f7f79ce00a7b1be data\super-recipes\advancement\recipes\misc\music_disc_strad.json
+f185594812dc14e806a2fc544ff40a9a893ca964 data\super-recipes\recipe\music_disc_creator.json
 dee83a2795067863bba76c148af4aa94798b51ff data\super-recipes\recipe\music_disc_cat.json
 770ef82538be6f7f1538384abe9fc410d764db76 data\super-recipes\recipe\music_disc_ward.json
 453739f376fb6ec2df1826605e3b35effdc6c6a4 data\super-recipes\recipe\music_disc_pigstep.json
