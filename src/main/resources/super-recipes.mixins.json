@@ -6,6 +6,7 @@
     "BeaconEffectsMixin",
     "HopperSpeedMixin",
     "HopperSpeedToggleMixin",
+    "ItemDispenserBehaviorMixin",
     "MusicDiscRemainderMixin",
     "SaturationStatusEffectMixin"
   ],
