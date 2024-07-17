@@ -1,6 +1,10 @@
 package net.trollblox.superrecipes;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.stat.Stats;
 import net.trollblox.superrecipes.config.SuperConfigs;
 import net.trollblox.superrecipes.util.SuperLootTableModifiers;
 import org.slf4j.Logger;
@@ -17,5 +21,6 @@ public class SuperRecipes implements ModInitializer {
 		SuperConfigs.registerConfigs();
 
 		SuperLootTableModifiers.modifyLootTables();
+
 	}
 }
