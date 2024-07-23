@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_music_disc_mall": {
+    "has_music_disc_stal": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:music_disc_mall"
+            "items": "minecraft:music_disc_stal"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:music_disc_mall"
+        "recipe": "minecraft:music_disc_stal_duplication"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_music_disc_mall"
+      "has_music_disc_stal"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:music_disc_mall"
+      "minecraft:music_disc_stal_duplication"
     ]
   }
 }

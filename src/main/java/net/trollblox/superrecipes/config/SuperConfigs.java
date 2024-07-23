@@ -1,6 +1,7 @@
 package net.trollblox.superrecipes.config;
 
 import com.mojang.datafixers.util.Pair;
+import net.trollblox.superrecipes.Constants;
 import net.trollblox.superrecipes.SuperRecipes;
 
 public class SuperConfigs {
@@ -15,7 +16,7 @@ public class SuperConfigs {
         configs = new SuperConfigProvider();
         createConfigs();
 
-        CONFIG = SimpleConfig.of(SuperRecipes.MOD_ID + "-config").provider(configs).request();
+        CONFIG = SimpleConfig.of(Constants.MOD_ID + "-config").provider(configs).request();
 
         assignConfigs();
     }

@@ -34,8 +34,16 @@ public class SuperRecipesRecipeProvider extends FabricRecipeProvider {
                 .pattern("#D#")
                 .input('#', Items.COBBLESTONE).input('D', Items.REDSTONE).input('C', Items.CROSSBOW)
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
-                .offerTo(exporter, Identifier.of(getRecipeName(Items.DISPENSER)));
-        generateMusicDiscRecipes(exporter);
+                .offerTo(exporter, Identifier.of("crossbow_dispenser"));
+
+        // Crossbow Dispenser + Deepslate Recipe
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, Items.DISPENSER, 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("#D#")
+                .input('#', Items.COBBLED_DEEPSLATE).input('D', Items.REDSTONE).input('C', Items.CROSSBOW)
+                .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
+                .offerTo(exporter, Identifier.of("deepslate_crossbow_dispenser"));
 
         // Deepslate Dropper
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, Items.DROPPER, 1)
@@ -44,7 +52,10 @@ public class SuperRecipesRecipeProvider extends FabricRecipeProvider {
                 .pattern("#R#")
                 .input('#', Blocks.COBBLED_DEEPSLATE).input('R', Items.REDSTONE)
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
-                .offerTo(exporter, Identifier.of(getRecipeName(Items.DROPPER)));
+                .offerTo(exporter, Identifier.of("deepslate_dropper"));
+
+        // Music Discs
+        generateMusicDiscRecipes(exporter);
 
     }
 
@@ -63,6 +74,6 @@ public class SuperRecipesRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .input('#', Items.DIAMOND).input('X', item)
                 .criterion(hasItem(item), conditionsFromItem(item))
-                .offerTo(exporter, Identifier.of(getRecipeName(item)));
+                .offerTo(exporter, Identifier.of(getRecipeName(item)) + "_duplication");
     }
 }

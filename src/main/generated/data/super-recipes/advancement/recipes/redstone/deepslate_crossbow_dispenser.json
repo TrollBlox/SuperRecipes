@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dropper"
+        "recipe": "minecraft:deepslate_crossbow_dispenser"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dropper"
+      "minecraft:deepslate_crossbow_dispenser"
     ]
   }
 }
