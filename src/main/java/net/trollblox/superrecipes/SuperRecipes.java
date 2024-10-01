@@ -2,9 +2,13 @@ package net.trollblox.superrecipes;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.stat.Stats;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradeOfferList;
+import net.minecraft.village.VillagerData;
 import net.trollblox.superrecipes.config.SuperConfigs;
 import net.trollblox.superrecipes.util.SuperLootTableModifiers;
 import org.slf4j.Logger;

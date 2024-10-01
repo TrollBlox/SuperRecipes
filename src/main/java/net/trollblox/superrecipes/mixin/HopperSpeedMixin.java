@@ -58,9 +58,7 @@ public class HopperSpeedMixin implements HopperSpeedData {
             return;
         }
 
-        hopperSpeed = HopperSpeed.VANILLA;
-
-
+        hopperSpeed = HopperSpeed.MODDED;
 
     }
 
