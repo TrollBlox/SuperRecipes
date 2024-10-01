@@ -3,15 +3,14 @@
 	"id": "super-recipes",
 	"version": "${version}",
 	"name": "Super Recipes",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Custom Recipes and more for s1 Server ",
 	"authors": [
-		"Me!"
+		"TrollBlox"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/TrollBlox/SuperRecipes"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/super-recipes/icon.png",
 	"environment": "*",
 	"entrypoints": {
