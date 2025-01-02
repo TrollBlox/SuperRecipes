@@ -18,14 +18,14 @@ public enum HopperSpeed {
         for (HopperSpeed speed : HopperSpeed.values()) {
             if (speed.getValue() == value) return speed;
         }
-        return HopperSpeed.getHopperSpeedFromValue(false);
+        return HopperSpeed.MODDED;
     }
 
     public static HopperSpeed getHopperSpeedFromValueInverse(boolean value) {
         for (HopperSpeed speed : HopperSpeed.values()) {
             if (speed.getValue() == !value) return speed;
         }
-        return HopperSpeed.getHopperSpeedFromValue(false);
+        return HopperSpeed.MODDED;
     }
 
 }

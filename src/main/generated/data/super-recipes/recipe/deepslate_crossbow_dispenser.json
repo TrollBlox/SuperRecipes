@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:cobbled_deepslate"
-    },
-    "C": {
-      "item": "minecraft:crossbow"
-    },
-    "D": {
-      "item": "minecraft:redstone"
-    }
+    "#": "minecraft:cobbled_deepslate",
+    "C": "minecraft:crossbow",
+    "D": "minecraft:redstone"
   },
   "pattern": [
     "###",

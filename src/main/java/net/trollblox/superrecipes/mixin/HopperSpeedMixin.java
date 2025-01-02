@@ -29,7 +29,7 @@ public class HopperSpeedMixin implements HopperSpeedData {
 
     @Unique
     public HopperSpeed super_recipes_1_21$getHopperSpeed() {
-        return hopperSpeed;
+        return (hopperSpeed == null ? HopperSpeed.MODDED : hopperSpeed);
     }
 
     @Inject(at = @At("TAIL"), method = "setTransferCooldown")

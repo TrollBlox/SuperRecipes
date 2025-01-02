@@ -10,6 +10,7 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
 import net.minecraft.village.VillagerData;
 import net.trollblox.superrecipes.config.SuperConfigs;
+import net.trollblox.superrecipes.listeners.HopperSpeedToggleListener;
 import net.trollblox.superrecipes.util.SuperLootTableModifiers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,5 +28,6 @@ public class SuperRecipes implements ModInitializer {
 
 		SuperLootTableModifiers.modifyLootTables();
 
+		HopperSpeedToggleListener.init();
 	}
 }

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:cobblestone"
-    },
-    "C": {
-      "item": "minecraft:crossbow"
-    },
-    "D": {
-      "item": "minecraft:redstone"
-    }
+    "#": "minecraft:cobblestone",
+    "C": "minecraft:crossbow",
+    "D": "minecraft:redstone"
   },
   "pattern": [
     "###",
