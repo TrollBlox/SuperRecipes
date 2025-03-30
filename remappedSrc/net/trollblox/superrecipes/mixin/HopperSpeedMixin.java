@@ -14,8 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.Optional;
-
 @Mixin(HopperBlockEntity.class)
 public class HopperSpeedMixin implements HopperSpeedData {
     @Unique
@@ -25,8 +23,8 @@ public class HopperSpeedMixin implements HopperSpeedData {
     private int transferCooldown;
 
     @Unique
-    public void super_recipes_1_21$setHopperSpeed(HopperSpeed hopperSpeed) {
-        this.hopperSpeed = hopperSpeed;
+    public void super_recipes_1_21$setHopperSpeed(HopperSpeed slowHopper) {
+        this.hopperSpeed = slowHopper;
     }
 
     @Unique
@@ -36,7 +34,9 @@ public class HopperSpeedMixin implements HopperSpeedData {
 
     @Inject(at = @At("TAIL"), method = "setTransferCooldown")
     private void overrideNeedsCooldown(int transferCooldown, CallbackInfo info) {
-        if (hopperSpeed == HopperSpeed.VANILLA) return;
+        if (hopperSpeed == HopperSpeed.VANILLA) {
+            return;
+        }
         this.transferCooldown = transferCooldown - (8 - SuperConfigs.HOPPER_TICK_DELAY);
     }
 
@@ -48,16 +48,13 @@ public class HopperSpeedMixin implements HopperSpeedData {
     @Inject(at = @At("TAIL"), method = "readNbt")
     private void overrideReadNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup, CallbackInfo info) {
         // Check old key value in nbt and remove it
-        Optional<Boolean> hopperSpeedNbtOld = nbt.getBoolean(Constants.HOPPER_SPEED_NBT_ID_OLD);
-        Optional<Boolean> hopperSpeedNbt = nbt.getBoolean(Constants.HOPPER_SPEED_NBT_ID);
-
-        if (hopperSpeedNbtOld.isPresent()) {
-            hopperSpeed = HopperSpeed.getHopperSpeedFromValue(hopperSpeedNbtOld.get());
+        if (nbt.contains(Constants.HOPPER_SPEED_NBT_ID_OLD)) {
+            hopperSpeed = HopperSpeed.getHopperSpeedFromValue(nbt.getBoolean(Constants.HOPPER_SPEED_NBT_ID_OLD));
             nbt.remove(Constants.HOPPER_SPEED_NBT_ID_OLD);
             return;
         }
-        if (hopperSpeedNbt.isPresent()) {
-            hopperSpeed = HopperSpeed.getHopperSpeedFromValue(hopperSpeedNbt.get());
+        if (nbt.contains(Constants.HOPPER_SPEED_NBT_ID)) {
+            hopperSpeed = HopperSpeed.getHopperSpeedFromValue(nbt.getBoolean(Constants.HOPPER_SPEED_NBT_ID));
             return;
         }
 
