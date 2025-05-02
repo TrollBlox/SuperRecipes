@@ -9,3 +9,4 @@
 - Added new beacon effects (Health Boost II, Saturation I, Night Vision I)
 - Dispensers interact with cauldrons (water bucket, lava bucket, powdered snow bucket, and empty bucket all work)
 - Insomnia resets when waking up from a bed, not when sleeping
+- Channelling Tridents cause thunderstorms to start

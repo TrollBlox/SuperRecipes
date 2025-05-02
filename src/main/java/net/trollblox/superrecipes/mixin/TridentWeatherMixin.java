@@ -16,6 +16,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 import net.minecraft.world.level.ServerWorldProperties;
 import net.trollblox.superrecipes.SuperRecipes;
+import net.trollblox.superrecipes.config.SuperConfigs;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -33,6 +34,7 @@ public abstract class TridentWeatherMixin extends Entity {
 
     @Unique
     private void changeWeather() {
+        if (!SuperConfigs.CHANNELLING_AFFECTS_WEATHER) return;
         if (itemStack == null) return;
         if (!itemStack.getEnchantments().getEnchantments().contains(this.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOptional(Enchantments.CHANNELING).orElse(null))) return;
         if (!this.getWorld().isClient) {
