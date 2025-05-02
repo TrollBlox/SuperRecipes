@@ -9,7 +9,9 @@
     "ItemDispenserBehaviorMixin",
     "MusicDiscRemainderMixin",
     "PhantomBugFix",
-    "SaturationStatusEffectMixin"
+    "SaturationStatusEffectMixin",
+    "TridentWeatherMixin",
+    "WorldPropertiesAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
