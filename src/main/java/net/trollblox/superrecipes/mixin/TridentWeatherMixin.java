@@ -34,7 +34,7 @@ public abstract class TridentWeatherMixin extends Entity {
 
     @Unique
     private void changeWeather() {
-        if (!SuperConfigs.CHANNELLING_AFFECTS_WEATHER) return;
+        if (!SuperConfigs.CHANNELING_AFFECTS_WEATHER) return;
         if (itemStack == null) return;
         if (!itemStack.getEnchantments().getEnchantments().contains(this.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOptional(Enchantments.CHANNELING).orElse(null))) return;
         if (!this.getWorld().isClient) {
