@@ -70,7 +70,7 @@ public abstract class TridentWeatherMixin extends Entity {
         super(type, world);
     }
 
-    @Inject(at = @At("TAIL"), method = "<init>*")
+    @Inject(at = @At("TAIL"), method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/item/ItemStack;)V")
     private void overrideConstructor(World world, LivingEntity owner, ItemStack stack, CallbackInfo info) {
         itemStack = stack;
     }
