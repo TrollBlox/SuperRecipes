@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.TridentEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.BlockHitResult;
@@ -33,17 +34,23 @@ public abstract class TridentWeatherMixin extends Entity {
     private ItemStack itemStack;
 
     @Unique
-    private void changeWeather() {
+    private void changeWeather(boolean block) {
+        if (dealtDamage) return;
         if (!SuperConfigs.CHANNELING_AFFECTS_WEATHER) return;
         if (itemStack == null) return;
         if (!itemStack.getEnchantments().getEnchantments().contains(this.getWorld().getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).getOptional(Enchantments.CHANNELING).orElse(null))) return;
         if (!this.getWorld().isClient) {
-            ServerWorld overworld = this.getServer().getOverworld();
+            MinecraftServer server = this.getServer();
+            if (server == null) return;
+            ServerWorld overworld = server.getOverworld();
             ServerWorldProperties properties = ((WorldPropertiesAccessor) overworld).getWorldProperties();
             Entity bolt = new LightningEntity(EntityType.LIGHTNING_BOLT, overworld);
             bolt.setPosition(this.getPos());
-            overworld.spawnEntity(bolt);
-            if (!properties.isThundering()) {
+            boolean thundering = properties.isThundering();
+            if (block || !thundering) {
+                overworld.spawnEntity(bolt);
+            }
+            if (!thundering) {
                 overworld.setWeather(0, ServerWorld.THUNDER_WEATHER_DURATION_PROVIDER.get(overworld.getRandom()), true, true);
             }
         }
@@ -51,14 +58,12 @@ public abstract class TridentWeatherMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "onEntityHit")
     private void overrideEntityHit(EntityHitResult entityHitResult, CallbackInfo info) {
-        changeWeather();
+        changeWeather(false);
     }
 
     @Inject(at = @At("HEAD"), method = "onBlockHitEnchantmentEffects")
     private void overrideBlockHit(ServerWorld world, BlockHitResult blockHitResult, ItemStack weaponStack, CallbackInfo info) {
-        if (!dealtDamage) {
-            changeWeather();
-        }
+        changeWeather(true);
     }
 
     public TridentWeatherMixin(EntityType<?> type, World world) {
